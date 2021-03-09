@@ -37,6 +37,8 @@ catch子句按照出现的顺序逐一进行匹配，因此应该将最特殊（
 
 ### noexcept 
 noexcept说明符： 出现在成员函数的const，引用限定符之后，override, final限定符，=0之前。     同时，使用尾置返回类型时，它出现在尾置返回类型之前。 编译器不会为一个声明为noexcept却抛出异常的代码给出警告。  可以将函数指针声明为noexcept，这样的指针不能指向可能抛出异常的函数。  
+noexcept只是告诉编译器这个函数不会抛出异常，但是不能肯定这个函数就不会抛出异常。noexcept的好处是，对于真正不会抛出异常的代码，编译器会执行优化。
+
 noexcept做说明符的时候，可以有异常参数。 如：  ret_type f(args) noexcept(true); 或者 ret_type f(args) noexcept(false);  
 noexcept运算符： noexcept不回计算表达式的值，判断是否抛出异常。noexcept返回常量右值布尔表达式。  noexcept运算符可以和说明符一同使用。  如： ret_type f(args) noexcept(g());如果函数g()不抛出异常，那么f()不抛出异常。  
 

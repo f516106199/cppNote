@@ -1,4 +1,4 @@
-## new and delete operator
+## new and delete expression
 tips: memory leak: **memory is not deallocated until program terminates**
 ### new operator  
 1.new 处理动态数组时：  
