@@ -18,3 +18,5 @@
     * [exceptionHanding](exception/exceptionhanding.md)
 * namespace 
     * [namespace](namespace/namespace.md)
+* generic
+    * [generic](generic/generic&associative.md)
