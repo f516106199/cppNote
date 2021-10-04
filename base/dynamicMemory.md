@@ -2,7 +2,7 @@
 tips: memory leak: **memory is not deallocated until program terminates**
 ### new operator  
 1.new 处理动态数组时：  
->表达式中除了最后一维，其余都应该是constexpr 。  
+>表达式中除了最后一维（从左往右第一个方括号里面），其余都应该是constexpr 。  
 eg:
 ``` c++ 
 int n=32;
@@ -48,7 +48,7 @@ al.destory(ptr);
 al.deallocate(ptr,11);
 ```
 **to be continued..**  
-## smart pointers
+## smart pointers  
 shared_ptr && weak_ptr
 1.shared_ptr
 不要混用shared_ptr和普通指针  
