@@ -4,6 +4,9 @@
 >被使用，那么该成员不会被实例化。
 >模板参数遵循普通的作用域规则，一个模板参数名的可用范围是在其声明之后，至模板声明或定义结束之前。在模板内不可以重用模板参数名。即一个模板参数名只可以在模板参数列表中出现一次  
 >并且在模板内不能再定义与模板参数同名的变量。  
+## 模板形参  
+模板参数可以分为类型参数和非类型参数。  考虑std::array<typename T,size_t n>;  
+对于非类型参数，只可以是整数（int, short,long,unsigned ...）类型或者static类型的引用或者指针。  
 ### 默认实参
 我们可以为函数模板和类模板提供默认实参  
 eg   
@@ -112,7 +115,7 @@ template<class T> struct A {
 标准库定义std::move()的方式:
 ```c++
 template <typename T>
-typename remove_reference<T>::type&& move(T&&t){
+constexpr remove_reference<T>::type&& move(T&&t)noexcept{
   return static_cast<typename remove_reference<T>::type&&>(t);//即使T是一个左值。也可以使用static_cast;
 ```
 std::forward()的使用方法： 参考[cpp_reference](https://zh.cppreference.com/w/cpp/utility/forward) 和 [stackoverfolw](https://stackoverflow.com/questions/8526598/how-does-stdforward-work)  
