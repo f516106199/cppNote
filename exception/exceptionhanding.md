@@ -43,3 +43,13 @@ noexcept做说明符的时候，可以有异常参数。 如：  ret_type f(args
 noexcept运算符： noexcept不回计算表达式的值，判断是否抛出异常。noexcept返回常量右值布尔表达式。  noexcept运算符可以和说明符一同使用。  如： ret_type f(args) noexcept(g());如果函数g()不抛出异常，那么f()不抛出异常。  
 
 如果一个虚函数承诺不抛出异常，那么它的派生版本也应该如此。  相反，如果虚函数可能派生异常，派生的函数可以（不）抛出异常。  
+
+
+### 可供选择的异常处理方法：
+- 抛出异常 throw a exception   
+- 返回error code.    
+- terminate the process  
+用于编译时诊断错误的方法：  
+static_assert(expr,str)   expr必须为真，否则会将str作为编译错误信息打印。  常常用于在泛型编程时判断类型。  
+用于debug时进行测试：
+assert(expr)   expr为false时触发断言（assert）  
