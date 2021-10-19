@@ -16,7 +16,7 @@ const变量有几个关键点：
 **解决方法:** 不论实在头文件还是在源文件中都是用extern const 的形式来定义或者声明变量。且只定义一次变量。  
 *eg:: file.h  extern const int x;*  
 *file.cpp  extern const int x=32;*  
-这样可以做到在多个文件内共享一个const变量。  
+这样可以做到在多个文件内共享一个const变量。  但是尽量不要使用全局的const变量。 用enum 会更加合适。  
 - const 在修饰引用的时候都是指引用的对象是一个常量。
 - auto 会过滤掉顶层const
 ## constexpr 
