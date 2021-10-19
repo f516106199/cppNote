@@ -23,3 +23,4 @@ const变量有几个关键点：
 - constexpr 修饰的变量必须在编译时就能够得到计算。（adding::定义在函数体外的变量都是在编译期间知道地址)
 - constexpr 修饰指针时都是指顶层const 
 - constexpr 修饰函数时代表返回值可能是一个常量表达式。  constexpr 函数体内不应该有修改函数体外对象的操作。  
+- 函数值类型模板参数的实参（argument）必须是一个常量表达时（constexpr）。  
