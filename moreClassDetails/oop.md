@@ -46,7 +46,7 @@ bsk.add_item(new base(sale)); // sale可能是一个派生类的对象，但是�
 virtual base* clone()&&{return new quote(std::move(*this));}
 virtual base* clone()const &{return new quote(*this)};
 ```
-*** 动态类型转换  
+### 动态类型转换  
 如果要对判断某个派生类的类型，可以使用动态类型转换  dynamic_cast    
 当dynamic_cast作用于一个指针时，会返回一个指针，如果不是响应的类型，返回nullPtr.  
 当dynamic_cast作用于一个引用时，如果不是响应的类型抛出bad_cast。  
